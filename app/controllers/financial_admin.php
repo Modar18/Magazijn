@@ -12,12 +12,12 @@ class Financial_admin extends Controller {
         $this->view('financial_admin/index', $data);
     }
 
-    public function home() {
+    public function magazijn() {
         $data = [
             'title' => 'kmkmkmk'
         ];
 
-        $this->view('financial_admin/home', $data);
+        $this->view('financial_admin/magazijn', $data);
     }
 
 
