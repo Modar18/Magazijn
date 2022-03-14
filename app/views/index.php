@@ -7,15 +7,16 @@ foreach ($data['users'] as $user) {
 */
 ?>
 <?php require APPROOT . '/views/inc/header.php'; ?>
-<h1><?php echo $data['description']; ?>
-</h1>
+<h2><?php echo $data['description']; ?>
+</h2>
 
 <div class="users_buttens">
     <div class="container">
         <div class="text-center">        
               <a class="btn btn-success" href="<?php echo URLROOT; ?>super_user/index">Super User</a>
-              <a class="btn btn-danger" href="<?php echo URLROOT; ?>">User</a>
-              <a class="btn btn-warning" href="<?php echo URLROOT; ?>">User</a>
+              <a class="btn btn-danger" href="<?php echo URLROOT; ?>financial_admin/index">Financial Admin</a>
+              <a class="btn btn-success" href="<?php echo URLROOT; ?>docent/index">Docent</a>
+              <a class="btn btn-danger" href="<?php echo URLROOT; ?>student/index">Student</a>
 
         </div>
 

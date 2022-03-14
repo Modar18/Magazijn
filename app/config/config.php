@@ -9,7 +9,7 @@
     define('APPROOT', dirname(dirname(__FILE__)));
 
     //URLROOT (Dynamic links)
-    define('URLROOT', 'http://mvc-328658-framework.org/');
+    define('URLROOT', 'http://magazijn/');
 
     //Sitename
     define('SITENAME', 'MBO Utrecht');
