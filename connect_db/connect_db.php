@@ -5,5 +5,5 @@
   define("DBNAME", "Magazijn");
 
   $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DBNAME);
-  $sql = "SELECT * FROM `` ";
+  $sql = "SELECT * FROM `category`";
 ?>

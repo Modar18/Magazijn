@@ -5,8 +5,8 @@
 include("./connect_db.php");
 
 
-$sql = "SELECT * FROM `artikelen`";
-$sqlid = "SELECT `` FROM `artikelen`";
+$sql = "SELECT * FROM `category`";
+$sqlid = "SELECT `naam` FROM `cateogory`";
 $id = mysqli_query($conn, $sqlid);
 $result = mysqli_query($conn, $sql);
 // error afhandeling
@@ -19,15 +19,15 @@ while ($record = mysqli_fetch_assoc($result)) {
               <td>" . $record["omschrijving"] . "</td>
               <td>" . $record["prijs"] . "</td>
               <td>
-
+              <a href='./update.php?id=" . $record['id'] . "'>
+              Give rating
+              </a>
             </td>
               </tr>";
    while ($recordid = mysqli_fetch_assoc($id)){
 
    }
-//                 <a href='./update.php?id=" . $record['id'] . "'>
-// Give rating
-// </a>
+
 
 }
 ?>
@@ -49,4 +49,3 @@ while ($record = mysqli_fetch_assoc($result)) {
 <body>
     
 </body>
-</html>
