@@ -7,6 +7,8 @@ foreach ($data['users'] as $user) {
 */
 ?>
 <?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/navbar.php'; ?>
+<div class="container">
 <h1><?php echo $data['description']; ?>
 </h1>
 
@@ -21,6 +23,7 @@ foreach ($data['users'] as $user) {
 
     </div>
 
+</div>
 </div>
 
 

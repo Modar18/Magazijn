@@ -1,6 +1,6 @@
 <?php
 
-class Aanvrag
+class Magazijn
 {
     private $db;
     public function __construct()
@@ -8,9 +8,10 @@ class Aanvrag
         $this->db = new Database;
     }
 
-    public function getAanvrag()
+    public function getMagazijn()
     {
-        $stmt = $this->db->query('SELECT * FROM aanvragen ORDER BY naam_aanvrager ASC');
+        $stmt = $this->db->query('SELECT * FROM artikelen
+        ORDER BY naam ASC');
         $result = $this->db->resultSet();
         return $result;
     }
