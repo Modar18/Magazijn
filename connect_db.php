@@ -1,6 +1,6 @@
 <?php
   define("SERVERNAME", "localhost");
-  define("USERNAME", "Magazijn");
+  define("USERNAME", "root");
   define("PASSWORD", "");
   define("DBNAME", "Magazijn");
 

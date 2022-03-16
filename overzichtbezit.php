@@ -6,7 +6,7 @@ include("./connect_db.php");
 
 
 $sql = "SELECT * FROM `category`";
-$sqlid = "SELECT `naam` FROM `cateogory`";
+$sqlid = "SELECT `id` FROM `cateogory`";
 $id = mysqli_query($conn, $sqlid);
 $result = mysqli_query($conn, $sql);
 // error afhandeling
