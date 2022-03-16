@@ -1,11 +1,13 @@
 <?php
-class Super_User extends Controller {
-    public function __construct() {
+class Super_User extends Controller
+{
+    public function __construct()
+    {
         $this->aanvragModel = $this->model('aanvrag');
-
     }
 
-    public function index() {
+    public function index()
+    {
         $data = [
             'title' => 'super_user_home_page'
         ];
@@ -13,14 +15,31 @@ class Super_User extends Controller {
         $this->view('super_user/index', $data);
     }
 
-    public function aanvragen(){
+    public function aanvragen()
+    {
         $aanvrag = $this->aanvragModel->getAanvrag();
+
         $data = [
             'aanvrag' => $aanvrag,
         ];
-    
+
         $this->view('super_user/aanvragen', $data);
     }
+
+    public function delete()
+    {
+        $id = $_GET["id"];
+        $delete = $this->aanvraagModel->deleteAanvraag();
+        redirect('delete');
+
+
+        $data = [
+            'delete' => $delete,
+        ];
+        $this->view('super_user/aanvragen', $data);
+    }
+
+    
+
+
 }
-
-
