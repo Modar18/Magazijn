@@ -6,145 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/navbar.css"/>
-    <title>Hello, world!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Magazijn</title>
   </head>
   <body>
-  <div class="wrapper hover_collapse">
 
-    <div class="top_navbar">
-    <!-- logo -->
-    <div class="logo">Mbo Utrecht</div>
-
-    <!-- Menu button -->
-
-    <div class="menu"> 
-      <div class="hamburger">
-        <i class="fas fa-bars"></i>
-  </div>
-  </div>
-
-  <!-- sidebar -->
-      <div class="sidebar">
-      <div class="sidebar_inner">
-      <ul>
-            <li>
-            <a href="#">
-            <span class="icon"><i class="fa fa-qrcode"></i></span>
-            <span class="text">Dashboard</span>
-            </a>
-            </li>
-
-            <li>
-            <a href="#">
-            <span class="icon"><i class="fa fa-link"></i></span>
-            <span class="text">Bestellingen</span>
-            </a>
-            </li>
-            <li>
-            <a href="#">
-            <span class="icon"><i class="fa fa-eye"></i></span>
-            <span class="text">Batch picklijst</span>
-            </a>
-            </li>
-            <li>
-            <a href="#">
-            <span class="icon"><i class="fa fa-book"></i></span>
-            <span class="text">Producten</span>
-            </a>
-            </li>
-            <li>
-            <a href="#">
-            <span class="icon"><i class="fa fa-question-circle"></i></span>
-            <span class="text">Inkoopbestellingen</span>
-            </a>
-            </li>
-            <li>
-            <a href="#">
-            <span class="icon"><i class="fa fa-pen"></i></span>
-            <span class="text">Adresboek</span>
-            </a>
-            </li>
-            <li>
-            <a href="#">
-            <span class="icon"><i class="fa fa-id-card"></i></span>
-            <span class="text">Leveranciers</span>
-            </a>
-            </li>
-            <li>
-            <a href="#">
-            <span class="icon"><i class="fa fa-id-card"></i></span>
-            <span class="text">Zendingen</span>
-            </a>
-            </li>
-            <li>
-            <a href="#">
-            <span class="icon"><i class="fa fa-id-card"></i></span>
-            <span class="text">Magazijn</span>
-            </a>
-            </li>
-            <li>
-            <a href="#">
-            <span class="icon"><i class="fa fa-id-card"></i></span>
-            <span class="text">Rapporten</span>
-            </a>
-            </li>
-            <li>
-            <a href="#">
-            <span class="icon"><i class="fa fa-id-card"></i></span>
-            <span class="text">Tools</span>
-            </a>
-            </li>
-            <li>
-            <a href="#">
-            <span class="icon"><i class="fa fa-id-card"></i></span>
-            <span class="text">Instelingen</span>
-            </a>
-            </li>
-      </ul>
-      </div>
-</div>
-
-</div>
-
-<script type="text/javascript">
-  var li_items = document.querySelectorAll(".sidebar ul li");
-  var hamburger = document.querySelector(".hamburger");
-  var wrapper = document.querySelector(".wrapper");
+    <h1>Productenoverzicht</h1>
+    <hr>
   
-  li_items.forEach((li_item)=>{
-	li_item.addEventListener("mouseenter", ()=>{
+    <div class="container">
 
-			li_item.closest(".wrapper").classList.remove("hover_collapse");
-	})
-})
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Artikelnaam</th>
+                <th scope="col">Locatie</th>
+                <th scope="col">Aantal</th>
+                <th scope="col">Acties</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Categorie 1</td>
+                <td>Klaslokaal 1</td>
+                <td>5</td>
+                <td>
+                <button type="button" class="btn btn-outline-dark">Wijzigen</button>
+                <button type="button" class="btn btn-outline-dark">Verwijderen</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Categorie 2</td>
+                <td>Klaslokaal 2</td>
+                <td>2</td>
+                <td>
+                <button type="button" class="btn btn-outline-dark">Wijzigen</button>
+                <button type="button" class="btn btn-outline-dark">Verwijderen</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Categorie 3</td>
+                <td>Klaslokaal 3</td>
+                <td>3</td>
+                <td>
+                <button type="button" class="btn btn-outline-dark">Wijzigen</button>
+                <button type="button" class="btn btn-outline-dark">Verwijderen</button>
+                </td>
+              </tr>
+              <th scope="row">4</th>
+                <td>Categorie 4</td>
+                <td>Klaslokaal 4</td>
+                <td>4</td>
+                <td>
+                <button type="button" class="btn btn-outline-dark">Wijzigen</button>
+                <button type="button" class="btn btn-outline-dark">Verwijderen</button>
+                </td>
+              </tr>
+              <tr><th scope="row">5</th>
+                <td>Categorie 5</td>
+                <td>Klaslokaal 5</td>
+                <td>5</td>
+                <td>
+                <button type="button" class="btn btn-outline-dark">Wijzigen</button>
+                <button type="button" class="btn btn-outline-dark">Verwijderen</button>
+                </td>
+              </tr>
+              <tr><th scope="row">6</th>
+                <td>Categorie 6</td>
+                <td>Klaslokaal 6</td>
+                <td>6</td>
+                <td>
+                <button type="button" class="btn btn-outline-dark">Wijzigen</button>
+                <button type="button" class="btn btn-outline-dark">Verwijderen</button>
+                </td>
+              </tr>
+              <tr><th scope="row">7</th>
+                <td>Categorie 7</td>
+                <td>Klaslokaal 7</td>
+                <td>7</td>
+                <td>
+                <button type="button" class="btn btn-outline-dark">Wijzigen</button>
+                <button type="button" class="btn btn-outline-dark">Verwijderen</button>
+                </td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  
+    </div>
 
-li_items.forEach((li_item)=>{
-	li_item.addEventListener("mouseleave", ()=>{
+    <div class="button" style="padding-left: 110px; "> </div>
+      <li href= "beheren.php" button type="button"class="btn btn-outline-dark">Nieuwe artikel toevoegen</li>
+    </div>
 
-			li_item.closest(".wrapper").classList.add("hover_collapse");
-
-	})
-})
-
-hamburger.addEventListener("click", () => {
-	hamburger.closest(".wrapper").classList.toggle("hover_collapse");
-})
-</script>
-
-
-</div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
   </body>
 </html>
