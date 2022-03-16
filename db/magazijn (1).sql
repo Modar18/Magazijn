@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 08 mrt 2022 om 11:32
+-- Gegenereerd op: 16 mrt 2022 om 12:59
 -- Serverversie: 5.7.31
 -- PHP-versie: 7.4.23
 
@@ -37,14 +37,16 @@ CREATE TABLE IF NOT EXISTS `aanvragen` (
   `opbrengst` datetime NOT NULL,
   `status` tinyint(1) DEFAULT NULL COMMENT '0 = not verified,1= verified	',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `aanvragen`
 --
 
 INSERT INTO `aanvragen` (`id`, `naam_aanvrager`, `user_id`, `naam_artikel`, `uitgeleend`, `opbrengst`, `status`) VALUES
-(1, 'Mohamed Loul', NULL, 'Laptop', '2022-03-01 19:07:06', '2022-03-01 19:07:06', 1);
+(1, 'Mohamed Loul', 1, 'Laptop', '2022-03-01 19:07:06', '2022-03-01 19:07:06', 1),
+(3, 'Bader', 2, 'Muis', '2022-03-26 16:29:33', '2022-03-28 16:29:33', 0),
+(4, 'Adam', NULL, 'Laptop', '2022-03-12 12:47:08', '2022-03-18 12:47:08', 0);
 
 -- --------------------------------------------------------
 
