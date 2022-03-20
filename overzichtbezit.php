@@ -4,17 +4,17 @@ include("./connect_db.php");
 include("./Database.php");
 
 // definieren van variabelen die gaan helpen om de database te gebruiken
+
 $db = new Database();
 
-$sql = $db->conn->prepare("SELECT * FROM artikel");
+$sql = $db->conn->prepare("SELECT * FROM bezittingen");
 $sql->execute();
 
 $sql->setFetchMode(PDO::FETCH_ASSOC);
 
-
 $records = "";
 
-// De backend van de tabel die de gevraagde gegevens opvraagt
+// De backend van de tabel die de gevraagde gegevens opvraagt doormiddel van een while loop
 
 while ($record = $sql->fetch()) {
     $records .= "<tr>
@@ -29,7 +29,7 @@ while ($record = $sql->fetch()) {
   </td>
     </tr>";
 }
-
+// var_dump($records)
 ?>
 
 <!doctype html>
@@ -61,10 +61,10 @@ while ($record = $sql->fetch()) {
         </thead>
         <tbody>
             <?= $records ?>
-         
+            
         </tbody>
     </table>
- 
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
