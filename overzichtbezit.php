@@ -1,51 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
 <?php
+// bestanden die nodig zijn voor een connectie met de database
 include("./connect_db.php");
+include("./Database.php");
+
+// definieren van variabelen die gaan helpen om de database te gebruiken
+$db = new Database();
+
+$sql = $db->conn->prepare("SELECT * FROM artikel");
+$sql->execute();
+
+$sql->setFetchMode(PDO::FETCH_ASSOC);
 
 
-$sql = "SELECT * FROM `category`";
-$sqlid = "SELECT `id` FROM `cateogory`";
-$id = mysqli_query($conn, $sqlid);
-$result = mysqli_query($conn, $sql);
-// error afhandeling
-$recordid = "";
 $records = "";
-while ($record = mysqli_fetch_assoc($result)) {
-  $records .= "<tr>
-              <th scope='row'>" . $record["id"] . "</th>
-              <td> " . $record["naam"] . "</td>
-              <td>" . $record["omschrijving"] . "</td>
-              <td>" . $record["prijs"] . "</td>
-              <td>
-              <a href='./update.php?id=" . $record['id'] . "'>
-              Update value
-              </a>
-            </td>
-              </tr>";
-   while ($recordid = mysqli_fetch_assoc($id)){
 
-   }
+// De backend van de tabel die de gevraagde gegevens opvraagt
 
-
+while ($record = $sql->fetch()) {
+    $records .= "<tr>
+    <th>" . $record["omschrijving"] . "</th>
+    <td>" . $record["bezittend persoon"] . "</td>
+    <td>" . $record["in bezit sinds"] . "</td>
+   
+    <td>" . $record["category"] . "</td>
+    <td>" . $record["Aantal"] . "</td>
+    <td>
+    </a>
+  </td>
+    </tr>";
 }
+
 ?>
 
+<!doctype html>
+<html lang="en">
 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<table>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-</table>
-
-
-
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Overzicht bezittingen</title>
 </head>
+<!-- de frontend van de tabel -->
 <body>
-    
+    <h1 style="text-align: center;">Overzicht bezittingen</h1>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">omschrijving</th>
+                <th scope="col">bezittend persoon</th>
+                <th scope="col">in bezit sinds</th>
+                
+                <th scope="col">category</th>
+                <th scope="col">aantal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?= $records ?>
+         
+        </tbody>
+    </table>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </body>
+
+</html>

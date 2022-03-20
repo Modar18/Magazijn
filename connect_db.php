@@ -1,9 +1,6 @@
 <?php
-  define("SERVERNAME", "localhost");
-  define("USERNAME", "root");
-  define("PASSWORD", "");
-  define("DBNAME", "Magazijn");
-
-  $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DBNAME);
-  $sql = "SELECT * FROM `category`";
+define("DB_NAME", "magazijn");
+define("DB_USER", "root");
+define("DB_PASS", "");
+define("DB_HOST", "localhost");
 ?>
