@@ -5,7 +5,7 @@ include("./Database.php");
 
 $db = new Database();
 
-$sql = $db->conn->prepare("SELECT * FROM artikel");
+$sql = $db->conn->prepare("SELECT * FROM artikel ORDER BY `omschrijving` ASC");
 $sql->execute();
 
 $sql->setFetchMode(PDO::FETCH_ASSOC);
@@ -57,46 +57,7 @@ while ($record = $sql->fetch()) {
         </thead>
         <tbody>
             <?= $records ?>
-            <!-- <tr>
-                <td></td>
-                <td>
-                    <a href='./categoriebewerk.php'>
-                        <img src='./img/edit.png' alt='pencil'>
-                    </a>
-                </td>
-                <td>
-                    <a href=''>
-                        <img src='./img/remove.png' alt='remove'>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>Hamers</td>
-                <td>
-                    <a href='./categoriebewerk.php'>
-                        <img src='./img/edit.png' alt='pencil'>
-                    </a>
-                </td>
-                <td>
-                    <a href=''>
-                        <img src='./img/remove.png' alt='remove'>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>Beeldschermen</td>
-                <td>
-                    <a href='./categoriebewerk.php'>
-                        <img src='./img/edit.png' alt='pencil'>
-                    </a>
-                </td>
-                <td>
-                    <a href=''>
-                        <img src='./img/remove.png' alt='remove'>
-                    </a>
-                </td>
-
-            </tr> -->
+            
         </tbody>
     </table>
    

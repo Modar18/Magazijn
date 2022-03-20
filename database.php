@@ -11,7 +11,7 @@ class Database
     public $logs = [];
 
 
-    //sets up all database connection so we can use it inside other classes
+    // zorgt voor een verbinding met de database zodat we die in klassen kunnen gebruiken
     public function __construct()
     {
         try {

@@ -7,7 +7,7 @@ include("./Database.php");
 
 $db = new Database();
 
-$sql = $db->conn->prepare("SELECT * FROM bezittingen");
+$sql = $db->conn->prepare("SELECT * FROM bezittingen ORDER BY `omschrijving` ASC");
 $sql->execute();
 
 $sql->setFetchMode(PDO::FETCH_ASSOC);
