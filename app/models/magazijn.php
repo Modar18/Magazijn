@@ -1,9 +1,16 @@
 <?php
-$arrays = "";
-while ($array = mysqli_fetch_assoc($result)) {
-  $arrays .= "<tr><th scope='row'>" . $array["id"] . "</th>
-              <td>" . $array["naam"] . "</td>
-              <td>" . $array["omschrijving"] . "</td>
-              <td>" . $array["prijs"] . "</td>
-                </tr>";
-};
+  class Magazijn{
+    private $db;
+
+    public function __construct()
+    {
+      $this->db = new Database;
+    }
+
+    public function getArtikelen(){
+      $this->db->query('SELECT * FROM `artikelen`');
+      $this->db->execute();
+      $result = $this->db->resultSet();
+      return $result;
+    }
+  }

@@ -4,7 +4,7 @@
 <div class="financial_admin">
     <div class="container">
         <div class="text-center">
-        <a class="btn btn-success" href="<?php echo URLROOT; ?>financial_admin/home">Magazijn Bekijken</a>
+        <a class="btn btn-success" href="<?php echo URLROOT; ?>financial_admin/magazijn">Magazijn Bekijken</a>
         <a class="btn btn-success" href="<?php echo URLROOT; ?>">Niks</a>
         <a class="btn btn-success" href="<?php echo URLROOT; ?>financial_admin/index/index">Niks</a>
         

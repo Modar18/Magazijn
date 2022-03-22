@@ -26,17 +26,17 @@ $sql = "SELECT * FROM `artikelen`";
         <table class="table table-light table-hover">
           <thead>
             <tr>
-              <th scope="col">Id</th>
+              <!-- <th scope="col">Id</th> -->
               <th scope="col">naam</th>
               <th scope="col">omschrijving</th>
               <th scope="col">prijs</th>
-              <!-- <th scope="col">update</th>
-              <th scope="col">delete</th> -->
+              <th scope="col">update</th>
+              <th scope="col">delete</th>
             </tr>
           </thead>
           <tbody>
             <?php
-            // echo $arrays;
+            echo $data["artikelen"];
             ?>
           </tbody>
         </table>
