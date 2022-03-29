@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 16 mrt 2022 om 12:59
+-- Gegenereerd op: 29 mrt 2022 om 10:50
 -- Serverversie: 5.7.31
 -- PHP-versie: 7.4.23
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `magazijn`
+-- Database: `mbo_magazijn`
 --
 
 -- --------------------------------------------------------
@@ -70,6 +70,29 @@ CREATE TABLE IF NOT EXISTS `artikelen` (
 INSERT INTO `artikelen` (`id`, `naam`, `omschrijving`, `prijs`) VALUES
 (1, 'Laptop', 'Msi 3450bbs', '233 € '),
 (2, 'pen', 'pen onder water ', '23 € ');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `magazijn`
+--
+
+DROP TABLE IF EXISTS `magazijn`;
+CREATE TABLE IF NOT EXISTS `magazijn` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `artikelen` varchar(191) NOT NULL,
+  `categorie` enum('schermen','kapels','laptops','muisen') NOT NULL,
+  `totaal` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `magazijn`
+--
+
+INSERT INTO `magazijn` (`id`, `artikelen`, `categorie`, `totaal`) VALUES
+(1, 'scherm 17 inch samsung', 'schermen', 144),
+(2, 'Hdmi', 'kapels', 200);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
