@@ -15,7 +15,7 @@ foreach ($data['users'] as $user) {
 <div class="users_buttens">
     <div class="container">
         <div class="text-center">        
-              <a class="btn btn-success" href="<?php echo URLROOT; ?>super_user/index">Super User</a>
+              <a class="btn btn-success" href="<?php echo URLROOT; ?>artikelen/index">Super User</a>
               <a class="btn btn-danger" href="<?php echo URLROOT; ?>">User</a>
               <a class="btn btn-warning" href="<?php echo URLROOT; ?>">User</a>
 

@@ -3,13 +3,13 @@
     define('DB_HOST', 'localhost'); //Add your db host
     define('DB_USER', 'root'); // Add your DB root
     define('DB_PASS', ''); //Add your DB pass
-    define('DB_NAME', 'magazijn'); //Add your DB Name
+    define('DB_NAME', 'mbo_magazijn'); //Add your DB Name
 
     //APPROOT
     define('APPROOT', dirname(dirname(__FILE__)));
 
     //URLROOT (Dynamic links)
-    define('URLROOT', 'http://mvc-328658-framework.org/');
+    define('URLROOT', 'http://magazijn/');
 
     //Sitename
     define('SITENAME', 'MBO Utrecht');
