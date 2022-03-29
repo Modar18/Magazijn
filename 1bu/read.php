@@ -22,24 +22,18 @@ $records = "";
 
 while ($record = $sql->fetch()) {
     $records .= "<tr>
-            <td>"  . $record["id"] . "</td>
-            <th>" . $record["omschrijving"] . "</th>
-            <td>" . $record["aantal"] . "</td>
-            <td>" . $record["category"] . "</td>
-            <td>
-                    <a href='./updateartikelen.php?omschrijving=" . $record["omschrijving"] . "'>
-                        <img src='./img/edit.png' alt='pencil'>
-                    </a>
-                </td>
-                <td>
-                    <a href='./delete.php?omschrijving=" . $record["omschrijving"] . "'>
-                        <img src='./img/remove.png' alt='remove'>
-                    </a>
-                </td>
-            </tr>
-            </td>
-            </tr>";
+    <th scope='row'>" . $record["id"] . "</th>
+    <td> " . $record["naam"] . "</td>
+    <td>" . $record["omschrijving"] . "</td>
+    <td>" . $record["prijs"] . "</td>
+    <td>
+    <a href='./update.php?id=" . $record['id'] . "'>
+    Update value
+    </a>
+  </td>
+    </tr>";
 }
+var_dump($records)
 ?>
 
 <!doctype html>
@@ -53,25 +47,59 @@ while ($record = $sql->fetch()) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Artikel beheer</title>
+    <title>Categorie beheer</title>
 </head>
 
 <body>
-    <h1 style="text-align: center;">Artikel beheer</h1>
-    <!-- <a href="./create_pagina.php"><button type="button" class="btn btn-secondary btn-lg">Artikel aanmaken</button></a> -->
-
+    <h1 style="text-align: center;">Categorie beheer</h1>
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Artikel naam</th>
-                <th scope="col">omschrijving</th>
-                <th scope="col">aantal</th>
-                <th scope="col">categorie</th>
+                <th scope="col">Categorie naam</th>
             </tr>
         </thead>
         <tbody>
             <?= $records ?>
-           
+            <!-- <tr>
+                <td></td>
+                <td>
+                    <a href='./categoriebewerk.php'>
+                        <img src='./img/edit.png' alt='pencil'>
+                    </a>
+                </td>
+                <td>
+                    <a href=''>
+                        <img src='./img/remove.png' alt='remove'>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Hamers</td>
+                <td>
+                    <a href='./categoriebewerk.php'>
+                        <img src='./img/edit.png' alt='pencil'>
+                    </a>
+                </td>
+                <td>
+                    <a href=''>
+                        <img src='./img/remove.png' alt='remove'>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Beeldschermen</td>
+                <td>
+                    <a href='./categoriebewerk.php'>
+                        <img src='./img/edit.png' alt='pencil'>
+                    </a>
+                </td>
+                <td>
+                    <a href=''>
+                        <img src='./img/remove.png' alt='remove'>
+                    </a>
+                </td>
+
+            </tr> -->
         </tbody>
     </table>
     <!-- Optional JavaScript; choose one of the two! -->
