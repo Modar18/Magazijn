@@ -39,5 +39,12 @@
 
     }
 
+    public function deleterecord($id) {
+      
+      $this->db->query("DELETE FROM artikelen WHERE id = :id");
+      $this->db->bind("id", $id, PDO::PARAM_INT);
+      return $this->db->execute();
+    }
+
 
   }

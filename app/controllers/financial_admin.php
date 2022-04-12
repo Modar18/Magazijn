@@ -65,7 +65,17 @@ class Financial_admin extends Controller {
 
     }
     
+    public function delete($id) {
+       //echo $id;
+       $this->userModel->deleterecord($id);
 
+        $data = [
+            'deleteStatus' => "Het record met id = $id is verwijdert"
+        ];
+        $this->view("financial_admin/delete", $data);
+        header("Refresh:2; url=" . URLROOT . "/financial_admin/OverzichtFinancialAdmin");
+
+    }
 
 }
 
