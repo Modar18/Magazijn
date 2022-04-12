@@ -7,6 +7,7 @@ $sql = "SELECT * FROM `artikelen`";
     <link rel="stylesheet" href="css\navbar.css>
 
 <main class="container">
+  
 
 <div class="row">
   <div class="col-12">
@@ -16,8 +17,6 @@ $sql = "SELECT * FROM `artikelen`";
 
       </div>
     </div>
-
-
 
     <div class="row">
       <div class="col-6">

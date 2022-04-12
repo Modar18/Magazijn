@@ -27,7 +27,7 @@ class Financial_admin extends Controller {
             <td><a href='" . URLROOT . "/financial_admin/delete/$values->id'><i class='bi bi-x-circle'></i></td>
             </tr>";
             
-        }
+        }           
         
         $data = [
             'title' => 'OverzichtFinancialAdmin',
@@ -40,8 +40,15 @@ class Financial_admin extends Controller {
     public function update($id = null) {
         // var_dump($id);exit();
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // var_dump($_POST);
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $this->userModel->updatetable($_POST);
+            $result = $this->userModel->updatetable($_POST);
+            //echo $result;exit();
+            if ($result) {
+                header(" Location: " . URLROOT . "/financial_admin/OverzichtFinancialAdmin");
+            } else {
+                header("Location: " . URLROOT . "/financial_admin/error");
+            }
         } else {
             $row = $this->userModel->updaterecord($id);
             $data = [
