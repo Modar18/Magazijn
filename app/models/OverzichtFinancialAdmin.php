@@ -40,9 +40,23 @@
     }
 
     public function deleterecord($id) {
-      
+
       $this->db->query("DELETE FROM artikelen WHERE id = :id");
       $this->db->bind("id", $id, PDO::PARAM_INT);
+      return $this->db->execute();
+    }
+
+    public function createrecord($post) {
+      
+      $this->db->query("INSERT INTO artikelen(id, naam, categorie, omschrijving, prijs) 
+                        VALUES(:id, :naam, :categorie, :omschrijving, :prijs)");
+
+      $this->db->bind(':id', NuLL, PDO::PARAM_INT);
+      $this->db->bind(':naam', $post["naam"]);
+      $this->db->bind(':categorie', $post["categorie"]);
+      $this->db->bind(':omschrijving', $post["omschrijving"]);
+      $this->db->bind(':prijs', $post["prijs"], PDO::PARAM_INT);
+      
       return $this->db->execute();
     }
 

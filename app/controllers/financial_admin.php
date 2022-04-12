@@ -57,11 +57,6 @@ class Financial_admin extends Controller {
             ];
             $this->view("financial_admin/update", $data);
         };
-        
-        
-        
-        
-        
 
     }
     
@@ -70,10 +65,27 @@ class Financial_admin extends Controller {
        $this->userModel->deleterecord($id);
 
         $data = [
-            'deleteStatus' => "Het record met id = $id is verwijdert"
+            'deleteStatus' => "Het record is verwijdert"
         ];
         $this->view("financial_admin/delete", $data);
         header("Refresh:2; url=" . URLROOT . "/financial_admin/OverzichtFinancialAdmin");
+
+    }
+
+    
+    public function create() {
+        if($_SERVER["REQUEST_METHOD"] == "POST") {
+            //var_dump($_POST);
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $this->userModel->createrecord($_POST);
+
+            header(" Location: " . URLROOT . "/financial_admin/OverzichtFinancialAdmin");
+        } else {
+            $data = [
+                'title' => '<h1>Voeg een nieuw artikel</h1>',
+            ];
+            $this->view("financial_admin/create", $data);
+        }
 
     }
 

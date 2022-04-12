@@ -23,7 +23,7 @@ $sql = "SELECT * FROM `artikelen`";
         </form>
       </div>
       <div class="col-12">
-      <button type="button" class="btn btn-dark float-end">Create</button>
+      <a href="<?=URLROOT;?>/financial_admin/create" class="btn btn-dark btn-lg active float-end" role="button" aria-pressed="true">Create</a>
         <table class="table table-light table-hover">
           <thead>
             <tr>
